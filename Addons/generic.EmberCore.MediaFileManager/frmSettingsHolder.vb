@@ -86,7 +86,7 @@ Public Class frmSettingsHolder
             With Me.ofdBrowse
                 .FileName = "TeraCopy.exe"
                 .Filter = "TeraCopy|*.exe"
-                If .ShowDialog = Windows.Forms.DialogResult.OK Then
+                If .ShowDialog = System.Windows.Forms.DialogResult.OK Then
                     If Not String.IsNullOrEmpty(.FileName) Then
                         Me.txtTeraCopyPath.Text = .FileName
                     End If

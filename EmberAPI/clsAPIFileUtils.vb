@@ -556,7 +556,7 @@ Namespace FileUtils
                 Return Path.Combine(Path.GetDirectoryName(strPath), Path.GetFileNameWithoutExtension(strPath))
                 'Return Path.Combine(Directory.GetParent(sPath).FullName, Path.GetFileNameWithoutExtension(sPath))
             Catch ex As Exception
-                logger.Error(ex, New StackFrame().GetMethod().Name & Convert.ToChar(Windows.Forms.Keys.Tab) & "Source: <" & strPath & ">")
+                logger.Error(ex, New StackFrame().GetMethod().Name & Convert.ToChar(System.Windows.Forms.Keys.Tab) & "Source: <" & strPath & ">")
                 Return String.Empty
             End Try
         End Function
@@ -631,7 +631,7 @@ Namespace FileUtils
                                                      Master.eLang.GetString(630, "Reconnect the source and press Retry"), ".",
                                                      Environment.NewLine, Environment.NewLine,
                                                      dbMovie.Filename), String.Empty,
-                                                                        MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Cancel Then Return False
+                                                                        MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning) = System.Windows.Forms.DialogResult.Cancel Then Return False
                 Else
                     Return False
                 End If
@@ -672,7 +672,7 @@ Namespace FileUtils
                                                      Master.eLang.GetString(630, "Reconnect the source and press Retry"), ".",
                                                      Environment.NewLine, Environment.NewLine,
                                                      dbTV.Filename), String.Empty,
-                                                                     MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Cancel Then Return False
+                                                                     MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning) = System.Windows.Forms.DialogResult.Cancel Then Return False
                 Else
                     Return False
                 End If
@@ -688,7 +688,7 @@ Namespace FileUtils
                                                      Master.eLang.GetString(630, "Reconnect the source and press Retry"), ".",
                                                      Environment.NewLine, Environment.NewLine,
                                                      dbTV.ShowPath), String.Empty,
-                                                                     MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Cancel Then Return False
+                                                                     MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning) = System.Windows.Forms.DialogResult.Cancel Then Return False
                 Else
                     Return False
                 End If
@@ -832,7 +832,7 @@ Namespace FileUtils
 #Region "Methods"
 
         Public Shared Sub Cache_All()
-            If MessageBox.Show(Master.eLang.GetString(104, "Are you sure?"), Master.eLang.GetString(565, "Clear Cache"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show(Master.eLang.GetString(104, "Are you sure?"), Master.eLang.GetString(565, "Clear Cache"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.Yes Then
                 If Directory.Exists(Master.TempPath) Then
                     Try
                         Dim dInfo As New DirectoryInfo(Master.TempPath)
@@ -855,7 +855,7 @@ Namespace FileUtils
 
         Public Shared Sub Cache_Show(ByVal TVDBIDs As List(Of String), ByVal cData As Boolean, ByVal cImages As Boolean)
             If TVDBIDs IsNot Nothing AndAlso TVDBIDs.Count > 0 Then
-                If MessageBox.Show(Master.eLang.GetString(104, "Are you sure?"), Master.eLang.GetString(565, "Clear Cache"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                If MessageBox.Show(Master.eLang.GetString(104, "Are you sure?"), Master.eLang.GetString(565, "Clear Cache"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.Yes Then
                     For Each id As String In TVDBIDs
                         Try
                             Dim basePath As String = Path.Combine(Master.TempPath, String.Concat("Shows", Path.DirectorySeparatorChar, id))
